@@ -1,0 +1,27 @@
+{% extends 'layout.html'  %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+      <br>
+      <br>
+  </div>
+  <div class="row">
+      <div class="col-md-6 offset-3">
+        <p class="text-center">UPLOAD PICTURES</p>
+        <div class="col-md-7 offset-4">
+            <p><a href="/model_form_upload" class="btn btn-info" >+ Upload Pictures</a></p>
+
+
+            <ul>
+            {% for obj in documents %}
+              <li>
+                <a href="{{ obj.document.url }}">{{ obj.document.name }}</a>
+                <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+              </li>
+            {% endfor %}
+            </ul>
+        </div>    
+            
+      </div>
+{% endblock %}

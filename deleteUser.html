@@ -1,0 +1,22 @@
+{% extends 'layout.html'  %}
+
+{% block content %}
+
+<h1>Are you sure you want to delete "{{ user.username }}"? </h1>
+<h2>         </h2>
+
+<h2>Username: "{{ user.username }}"? </h2>
+<h2>Firstname: "{{ user.first_name }}"? </h2>
+<h2>Lastname: "{{ user.last_name }}"? </h2>
+
+<form action="deleteConfirm" method="post">
+    {% csrf_token %} 
+    <input type="submit" value="Confirm"  class="btn btn-success" >  
+  </form>
+  <h2>         </h2>
+  <form action="deleteCancle" method="post">
+    {% csrf_token %} 
+    <input type="submit" value="Cancle"  class="btn btn-danger" >  
+  </form>
+
+{% endblock %}

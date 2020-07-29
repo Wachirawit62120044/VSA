@@ -1,0 +1,21 @@
+{% extends 'layout.html'  %}
+
+{% block content %}
+         <h1>Marklabel</h1>
+         <div class="container">
+        <div class="row">
+            <br>
+            <br>
+        </div>
+        <div class="row">
+            {% if img_obj %} 
+                    <div class="col-md-6 offset-3"> 
+                            {{ img_obj.name }} 
+                            <br>
+                            <br>
+                            <img src="{{ img_obj.image.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;" /> 
+                    </div> 
+            {% endif %} 
+        </div>
+    </div>
+{% endblock %}
